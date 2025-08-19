@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nara Lashes | Payment</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .cta-btn {
+      background: #e75480;
+      color: #fff;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/21412169/pexels-photo-21412169.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .hero-content h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+    .payment-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    .cart-summary {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .cart-summary h2 {
+      color: #e75480;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 0;
+      font-weight: bold;
+      font-size: 18px;
+      border-top: 2px solid #ddd;
+      margin-top: 10px;
+    }
+    .payment-form {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .payment-form h2 {
+      color: #e75480;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 15px;
+    }
+    .payment-methods {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .payment-method {
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .payment-method:hover, .payment-method.selected {
+      border-color: #e75480;
+      background: #fff0f5;
+    }
+    .payment-method input {
+      display: none;
+    }
+    .submit-btn {
+      background: #e75480;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+    }
+    .submit-btn:hover {
+      background: #d64570;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .payment-methods {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="index.html">Nara Lashes</a></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="payment.html">Payment</a></li>
+      </ul>
+    </nav>
+    
+    <!-- Cart Icon -->
+    <button id="cartBtn" style="position: relative; background: none; border: none; cursor: pointer; color: #fff; font-size: 24px;">
+      🛒
+      <span id="cartCount" style="position: absolute; top: -10px; right: -10px; background: #e75480; color: #fff; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 12px;">0</span>
+    </button>
+    
+    <!-- Cart Modal -->
+    <div id="cartModal" style="display: none; position: fixed; top: 0; right: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000;">
+      <div style="background: #fff; width: 90%; max-width: 500px; margin: 50px auto; border-radius: 10px; padding: 20px; position: relative;">
+        <button id="closeCart" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">×</button>
+        <h2 style="color: #e75480; margin-top: 0;">Your Cart</h2>
+        <div id="cartItems" style="margin-bottom: 20px;">
+          <!-- Cart items will be added here dynamically -->
+          <p>Your cart is empty</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 18px; margin-bottom: 20px;">
+          <span>Total:</span>
+          <span id="cartTotal">KSh 0</span>
+        </div>
+        <a href="payment.html" style="background: #e75480; color: #fff; padding: 12px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; display: block; text-align: center;">Proceed to Payment</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Secure Payment</h1>
+      <p>Complete your purchase with confidence</p>
+    </div>
+  </section>
+  
+  <!-- Security Badges -->
+  <section style="margin: 40px 0; text-align: center;">
+    <h2 style="color: #e75480; font-size: 32px; margin-bottom: 30px;">Secure MPesa Payment</h2>
+    <div style="display: flex; justify-content: center; padding: 0 20px; max-width: 800px; margin: 0 auto;">
+      <div style="background: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 100%; max-width: 400px;">
+        <img src="https://images.pexels.com/photos/7446922/pexels-photo-7446922.jpeg" alt="MPesa" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin: 0 auto 15px;">
+        <h3 style="color: #e75480; margin-bottom: 10px;">MPesa PayBill</h3>
+        <p style="font-size: 18px; margin-bottom: 10px;"><strong>PayBill Number:</strong> 247247</p>
+        <p style="font-size: 18px; margin-bottom: 20px;"><strong>Account Number:</strong> 0716693401</p>
+        <p>Secure instant mobile payments</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="payment-section">
+      <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <div id="paymentCartItems">
+          <!-- Cart items will be added here dynamically -->
+          <p>Your cart is empty</p>
+        </div>
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="paymentCartTotal">KSh 0</span>
+        </div>
+      </div>
+
+      <div class="payment-form">
+        <h2>Payment Details</h2>
+        <form id="paymentForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Payment Method</label>
+            <div class="payment-methods">
+              <label class="payment-method selected">
+                <input type="radio" name="paymentMethod" value="mpesa" checked>
+                <div>MPesa</div>
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>MPesa Payment Instructions</label>
+            <div style="background: #e75480; color: white; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+              <h3 style="margin-top: 0;">PayBill Details</h3>
+              <p><strong>PayBill Number:</strong> 247247</p>
+              <p><strong>Account Number:</strong> 0716693401</p>
+              
+            </div>
+            <button type="button" id="mpesaPayButton" style="background: #008000; color: white; padding: 15px; border: none; border-radius: 5px; font-size: 18px; font-weight: bold; cursor: pointer; width: 100%;">Click to Pay with MPesa</button>
+          </div>
+          
+          <!-- MPesa payment doesn't require card details -->
+          
+          <button type="submit" class="submit-btn">Complete Payment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Nara Lashes • All Rights Reserved</p>
+    <p>Located in Nairobi • Call/WhatsApp 0716-693-401</p>
+  </footer>
+
+  <script>
+    // Payment method selection
+    const paymentMethods = document.querySelectorAll('.payment-method');
+    paymentMethods.forEach(method => {
+      method.addEventListener('click', () => {
+        paymentMethods.forEach(m => m.classList.remove('selected'));
+        method.classList.add('selected');
+        const input = method.querySelector('input');
+        input.checked = true;
+      });
+    });
+    
+    // Form submission
+    document.getElementById('paymentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Please use the "Click to Pay with MPesa" button to complete your payment.');
+    });
+    
+    // MPesa payment button
+    document.getElementById('mpesaPayButton').addEventListener('click', function() {
+      alert('To complete your payment via MPesa:\n\n1. Open your MPesa menu\n2. Select "Lipa na MPesa"\n3. Select "Pay Bill"\n4. Enter Business Number: 247247\n5. Enter Account Number: 0716693401\n6. Enter Amount: KSh 3,400\n7. Enter your PIN and confirm\n\nYou will receive a confirmation message shortly.');
+      // In a real implementation, this would redirect to a payment gateway or initiate a STK push
+    });
+  </script>
+  
+  <script>
+    // Simple cart functionality
+    let cart = [];
+    
+    function updateCartCount() {
+      const cartCount = document.getElementById('cartCount');
+      cartCount.textContent = cart.length;
+    }
+    
+    function updateCartTotal() {
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      document.getElementById('cartTotal').textContent = `KSh ${total.toLocaleString()}`;
+    }
+    
+    function updateCartView() {
+      const cartItems = document.getElementById('cartItems');
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Your cart is empty</p>';
+        return;
+      }
+      
+      let cartHTML = '';
+      cart.forEach((item, index) => {
+        cartHTML += `
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #eee;">
+            <div>
+              <div style="font-weight: bold;">${item.item}</div>
+            </div>
+            <div>
+              <div>KSh ${item.price.toLocaleString()}</div>
+            </div>
+          </div>
+        `;
+      });
+      cartItems.innerHTML = cartHTML;
+    }
+    
+    // Show cart modal
+    document.getElementById('cartBtn').addEventListener('click', function() {
+      updateCartView();
+      document.getElementById('cartModal').style.display = 'block';
+    });
+    
+    // Close cart modal
+    document.getElementById('closeCart').addEventListener('click', function() {
+      document.getElementById('cartModal').style.display = 'none';
+    });
+    
+    // Close cart modal when clicking outside
+    document.getElementById('cartModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.style.display = 'none';
+      }
+    });
+    
+    // Update payment page cart summary
+    function updatePaymentCart() {
+      const cartItems = document.getElementById('paymentCartItems');
+      const cartTotal = document.getElementById('paymentCartTotal');
+      
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p>Your cart is empty</p>';
+        cartTotal.textContent = 'KSh 0';
+        return;
+      }
+      
+      let cartHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        cartHTML += `
+          <div class="cart-item">
+            <span>${item.item}</span>
+            <span>KSh ${item.price.toLocaleString()}</span>
+          </div>
+        `;
+        total += item.price;
+      });
+      
+      cartItems.innerHTML = cartHTML;
+      cartTotal.textContent = `KSh ${total.toLocaleString()}`;
+    }
+    
+    // Update payment cart when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      updatePaymentCart();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nara Lashes | Gallery</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #333;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .logo a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    h1 {
+      text-align: center;
+      margin: 30px 0 10px;
+      font-size: 36px;
+      color: #e75480;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+     <div class="logo">
+    <a href="index.html">
+      <img src="Nara Lashes logo.png" alt="Nara Lashes Logo" style="height:100px;">
+    </a>
+  </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <!-- Menu Button (hamburger) -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  
+  <nav>
+    <ul id="nav-links">
+      <li><a href="index.html"> Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  
+</header>
+<style>
+.menu-btn {
+    display: none;
+    font-size: 22px;   /* smaller size */
+    cursor: pointer;
+    padding: 8px 12px;
+    position: left;  /* stick to left */
+    right: 20px;   /* stick to right */
+    top: 15px;     /* adjust vertical position */
+    background: #e75480;
+    border-radius: 5px;
+    color: #fff;
+  }
+
+  /* 🔹 Mobile styles */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 10px;
+      background: #000;
+      width: 180px;  /* narrower menu */
+      padding: 10px;
+      border-radius: 8px;
+      display: none;
+    }
+    nav ul.show {
+      display: flex;
+    }
+    .menu-btn {
+      display: block;
+    }
+  }
+</style>
+  </style>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("nav-links").classList.toggle("show");
+  }
+</script>
+  <main>
+    <h1>Our Lash Gallery</h1>
+    <style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+  }
+
+  @media (max-width: 992px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+  }
+
+  .gallery-card {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .gallery-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #e75480;
+  }
+
+  .gallery-card p {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .book-btn {
+    display: inline-block;
+    background: #e75480;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .book-btn:hover {
+    background: #c7436d;
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .book-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+    }
+  }
+</style>
+
+<section class="gallery">
+  <div class="gallery-card">
+    <img src="1.jpg" alt="Classic Lash Extensions on Model">
+    <h3>Classic Lash Extensions</h3>
+    <p>Our Classic Lash Extensions are the perfect choice if you want to enhance your eyes with a natural and timeless look. Each lash is carefully applied to blend seamlessly with your own, giving you that effortless elegance for everyday wear. At Nara Lashes, we believe every blink should leave a lasting impression. Our premium lashes are designed to enhance your natural beauty, giving you effortless elegance and confidence for any occasion. Whether you’re going for subtle sophistication or bold glamour, Nara Lashes delivers the perfect style every time. Step into a world where luxury meets comfort, and let your eyes do the talking.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+
+  <div class="gallery-card">
+    <img src="2.jpg" alt="Lash Technician Applying Extensions">
+    <h3>Lash Lift & Tint</h3>
+    <p>For clients who love simplicity, the Lash Lift & Tint gently curls your natural lashes and adds a soft tint, giving you the illusion of longer, darker lashes — all without the need for mascara. Transform your lashes in just one session with our Lash Lift & Tint! Say goodbye to mascara and hello to naturally lifted, beautifully dark lashes that open up your eyes and enhance your look. Quick, safe, and long-lasting, our treatments give you effortless elegance every day. Wake up ready to shine—your lashes, your confidence, your beauty, perfected.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+
+  <div class="gallery-card">
+    <img src="3.jpg" alt="Before and After Lash Extensions">
+    <h3>Lash Removal Service</h3>
+    <p>When it’s time for a fresh start, our professional lash removal service gently and safely dissolves extensions without harming your natural lashes. Gently, safely, and effectively remove your lash extensions with our professional Lash Removal Service. Protect your natural lashes while getting a clean, fresh start—perfect for switching styles, correcting previous applications, or simply giving your lashes a break. Trust our experts to make the process comfortable, quick, and damage-free, leaving your natural beauty intact and ready for your next stunning look.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+
+  <div class="gallery-card">
+    <img src="4.jpg" alt="Detailed Lash Extension Application">
+    <h3>Before & After Transformation</h3>
+    <p>Our before-and-after transformations showcase the artistry and care we put into every client. See the magic for yourself! Our Before & After Transformations showcase the stunning results of our expert lash services. From natural enhancement to full-glam effects, witness how we elevate your look while keeping your lashes healthy and beautiful. Every transformation tells a story of confidence, style, and flawless results. From subtle definition to bold enhancement, our work speaks for itself.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+
+  <div class="gallery-card">
+    <img src="mbili.jpg" alt="Dramatic Lash Extensions">
+    <h3>Precision Lash Application</h3>
+    <p>Every lash we apply is done with precision and love. Our skilled lash artists map your eyes, ensuring the perfect style for your face shape and personality. Experience the art of flawless lashes with our Precision Lash Application. Every lash is carefully applied with meticulous attention to detail, ensuring a perfect, natural look that enhances your eyes and elevates your style. Because your lashes deserve nothing less than precision and perfection.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+
+  <div class="gallery-card">
+    <img src="6.jpg" alt="Classic Lash Extensions on Model">
+    <h3>Glam Volume Set</h3>
+    <p>Our Glam Volume Set is bold, dramatic, and perfect for special occasions. Multiple lightweight extensions are applied to each lash for the ultimate wow factor. Turn heads with our Glam Volume Set! Designed for those who love bold, full, and luxurious lashes, this service adds dramatic volume while keeping a soft, fluttery look. Perfect for special occasions or everyday glamour, your eyes will make a statement wherever you go.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+
+  <div class="gallery-card">
+    <img src="7.jpg" alt="Lash Technician Applying Extensions">
+    <h3>Natural Classic Look</h3>
+    <p>Our Natural Classic Look offers a soft enhancement that feels fresh and elegant. Perfect for first-time lash wearers or those who prefer subtle beauty. Enhance your beauty with our Natural Classic Look. Perfect for those who want subtle, elegant lashes that define your eyes without looking overdone. Soft, delicate, and effortlessly beautiful—your everyday glam, perfected.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+
+  <div class="gallery-card">
+    <img src="8.jpg" alt="Before and After Lash Extensions">
+    <h3>Our Lash Artists at Work</h3>
+    <p>Behind every flawless set of lashes is a trained artist dedicated to detail. At Nara Lashes, our team combines skill, patience, and artistry to create results that last. Watch the magic happen! Our skilled lash artists bring precision, creativity, and care to every set, ensuring your lashes look flawless and stunning. Experience the artistry behind every blink.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+
+  <div class="gallery-card">
+    <img src="9.jpg" alt="Detailed Lash Extension Application">
+    <h3>Hybrid Lash Style</h3>
+    <p>If you can’t decide between classic and volume, Hybrid Lashes blend both for a customizable, balanced, and stunning look that suits any occasion. Get the best of both worlds with our Hybrid Lash Style! Combining the fullness of volume lashes with the elegance of classic lashes, this look gives your eyes a perfectly balanced, stunning effect that’s both dramatic and natural.</p>
+    <p style="font-weight: bold;"></p>
+    <a href="contact.html" class="book-btn">Book Now</a>
+  </div>
+</section>
+
+  </main>
+  <footer>
+    <p>&copy; 2025 Nara Lashes • All Rights Reserved</p>
+  </footer>
+</body>
+</html>

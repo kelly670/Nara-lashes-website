@@ -1,0 +1,18 @@
+.book-btn {
+  background: #e75480;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px; /* keeps it nice on desktop */
+}
+
+.book-btn:hover {
+  background: #d94370;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

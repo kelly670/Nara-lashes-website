@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nara Lashes | About Us</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #fff;
+      color: #333;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    nav {
+      position: relative;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .cta-btn {
+      background: #e75480;
+      color: #fff;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .about-section {
+      margin-bottom: 40px;
+    }
+    .about-section h2 {
+      color: #e75480;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    .team {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .team-member {
+      text-align: center;
+    }
+    .team-member img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .team-member h3 {
+      color: #e75480;
+      margin-bottom: 5px;
+    }
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .value-card {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .value-card h3 {
+      color: #e75480;
+      margin-bottom: 10px;
+    }
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Hamburger Menu */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #000;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      header {
+        flex-direction: row;
+        align-items: center;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+  <a href="index.html">
+    <img src="Nara Lashes logo.png" alt="Nara Lashes Logo" style="height:100px;">
+  </a>
+</div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>About Nara Lashes</h1>
+      <p>Elevating beauty through expertly crafted lash extensions and personalized service</p>
+    </div>
+  </section>
+
+  <!-- Studio Images -->
+  <section style="margin: 40px 0;">
+    <h2 style="text-align: center; color: #e75480; font-size: 32px; margin-bottom: 30px;">Our Studio</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 0 20px;">
+      <img src="moja.jpg" alt="Nara Lashes Studio" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">
+      <img src="mbili.jpg" alt="Lash Application Process" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">
+      <img src="https://images.pexels.com/photos/21412169/pexels-photo-21412169.jpeg" alt="Relaxing Treatment Room" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="about-section">
+      <h2>Our Story</h2>
+      <p>Beauty has always been more than just a look — it's a feeling. I started my lash journey because I wanted to help women feel confident, radiant, and effortlessly elegant every single day.</p>
+      <p>After training as a certified lash artist, I saw how much clients loved the transformation — but also how busy life can make it hard to fit in salon visits. That’s why I decided to bring the lash experience directly to you. With a full professional kit, sanitized tools, and an eye for detail, I create a relaxing, luxury experience in the comfort of your own home..</p>
+      <p>Every set is customized to your natural features, lifestyle, and style goals — whether you love a soft, classic look or bold, voluminous lashes. My mission is simple: to make beauty easy, convenient, and empowering.</p>
+      <p>✨ Because you deserve lashes that feel as flawless as they look — without ever having to leave your home. ✨</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Approach</h2>
+      <p>At Nara Lashes, every lash set is more than just a treatment — it's a personalized experience designed to enhance your natural beauty and fit seamlessly into your life. We understand that your time is valuable, which is why we offer a mobile lash service that brings the salon experience directly to you, whether at home or your preferred location.</p>
+      <b>Our approach combines artistry, precision, and care:</b>
+      <br><br>
+      Customized Design - Every set is tailored to your unique eye shape, features, and style preferences.
+      <br><br>
+      Premium Quality - We use lightweight, professional-grade lashes and safe adhesives to protect your natural lashes.
+      <br><br>
+      Comfort & Convenience - From sanitized tools to a relaxing setup, we create a spa-like experience in your own space.
+      <br><br>
+      Lasting Results -Whether you choose Classic, Hybrid, or Volume, we focus on retention, comfort, and elegance.
+      <br><br>
+      Because we know lashes aren’t just about how you look — they're about how you feel.
+      <p>Each client receives a personalized consultation to determine the perfect lash style for their lifestyle, preferences, and eye shape. We offer a range of services from natural-looking classic sets to dramatic volume styles, ensuring there's something for everyone.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Our Values</h2>
+      <div class="values">
+        <div class="value-card">
+          <h3>Quality</h3>
+          <p>We use only premium, cruelty-free products and maintain the highest standards in our work.</p>
+        </div>
+        <div class="value-card">
+          <h3>Personalization</h3>
+          <p>Every client receives a customized experience tailored to their unique features and preferences.</p>
+        </div>
+        <div class="value-card">
+          <h3>Education</h3>
+          <p>We empower clients with knowledge on how to care for their lashes and maintain their beauty.</p>
+        </div>
+        <div class="value-card">
+          <h3>Integrity</h3>
+          <p>Honesty and transparency guide every interaction with our valued clients.</p>
+        </div>
+      </div>
+    </section>
+
+   
+  
+
+  <footer>
+    <p>&copy; 2025 Nara Lashes • All Rights Reserved</p>
+    <p>Located in Nairobi • Call/WhatsApp 0716-693-401</p>
+  </footer>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>

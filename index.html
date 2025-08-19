@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nara Lashes</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #fff0f5; /* very light pink */
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .cta-btn {
+      background: #e75480;
+      color: #fff;
+      padding: 8px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: #f78fb3;
+    }
+
+    /* Menu Button for Mobile */
+    .menu-btn {
+      display: none;
+      font-size: 22px;
+      cursor: pointer;
+      padding: 8px 12px;
+      background: #e75480;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(65%);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+    }
+
+    .hero-text h1 {
+      font-size: 4vw;
+      margin-bottom: 1rem;
+      color: #f78fb3;
+      text-shadow: 1px 1px 8px #a96ee3;
+    }
+
+    .hero-text p {
+      color: #fff;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    /* Highlights Section */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .highlight {
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .highlight:hover {
+      transform: translateY(-5px);
+    }
+
+    .highlight img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .highlight h2 {
+      color: #f78fb3;
+      margin-bottom: 10px;
+    }
+
+    .highlight p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Responsive Menu */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background: #000;
+        width: 180px;
+        padding: 10px;
+        border-radius: 8px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+  <a href="index.html">
+    <img src="Nara Lashes logo.png" alt="Nara Lashes Logo" style="height:100px;">
+  </a>
+</div>
+
+    
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    
+    <nav>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="services.html" class="cta-btn">Book Now</a>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("show");
+    }
+  </script>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="https://images.pexels.com/photos/7446922/pexels-photo-7446922.jpeg" alt="Professional eyelash extension in salon"/>
+    <div class="hero-text">
+      <h1>Flutter into Beauty with Nara Lashes</h1>
+      <p><i>Premium lash extensions & treatments tailored for your unique style.</i></p>
+      <a href="gallery.html" class="cta-btn">Explore Our Gallery</a>
+    </div>
+  </section>
+
+  <!-- Highlights Section -->
+  <section class="highlights">
+    <div class="highlight">
+      <img src="https://images.pexels.com/photos/21412169/pexels-photo-21412169.jpeg" alt="Macro of glued eyelash extensions"/>
+      <h2>Detail-Perfect Lashes</h2>
+      <p>Perfect lashes are more than just extensions — they’re a balance of artistry, precision, and style. Every set is tailored to your natural eye shape, lash health, and personal preference to create a flawless, comfortable look that feels as good as it looks.</p>
+      <a href="services.html" class="cta-btn">See Services</a>
+    </div>
+    <div class="highlight">
+      <img src="eyelashesremoval.png" alt="Side profile of lashes"/>
+      <h2>Elegant Styles</h2>
+      <p>Elevate your look with lashes designed to enhance your natural beauty. From soft and subtle classics to bold, glamorous volume, every set is customized to suit your style.</p>
+      <a href="gallery.html" class="cta-btn">View Gallery</a>
+    </div>
+    <div class="highlight">
+      <img src="pia.jpg" alt="Applying lashes with tweezers"/>
+      <h2>Artistry in Action</h2>
+      <p>Every lash set is more than a service — it's a work of art. With a trained eye for detail and a passion for enhancing natural beauty, I carefully design each look to complement your unique features.</p>
+      <a href="about.html" class="cta-btn">About us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Located in Nairobi • Call/WhatsApp 0716-693-401 • </p>
+    <p>© 2025 Nara Lashes. All rights reserved.</p>
+    
+  </footer>
+</body>
+</html>
